@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@drawable/pic_dialog_bg"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rlFilepickerHolder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.hkapps.messagepro.views.Breadcrumbs
+                android:id="@+id/fpBreadcrumb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:paddingStart="@dimen/margin_16"
+                android:paddingTop="@dimen/margin_4"
+                android:paddingEnd="@dimen/margin_4"
+                android:paddingBottom="@dimen/margin_4" />
+
+            <com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller
+                android:id="@+id/fastscroller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fpBreadcrumb">
+
+                <com.hkapps.messagepro.views.CustomRecyclerView
+                    android:id="@+id/recyclerViewFilepicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlFPFavoriteHolder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/fpFavoritesLabel"
+                style="@style/Text_Regular"
+                android:layout_marginTop="@dimen/margin_8"
+                android:padding="@dimen/margin_16"
+                android:text="@string/favorites"
+                android:textSize="@dimen/textsize_16" />
+
+            <com.hkapps.messagepro.views.CustomRecyclerView
+                android:id="@+id/recyclerViewFPFavorites"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/fpFavoritesLabel"
+                android:layout_marginStart="@dimen/margin_16"
+                android:scrollbars="none"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llFabHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:orientation="vertical">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabFavorite"
+            style="@style/FloatingAction_Button"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_0"
+            android:src="@drawable/logo_star"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabFilepicker"
+        style="@style/FloatingAction_Button"
+        android:layout_margin="@dimen/margin_16"
+        android:src="@drawable/icon_plus"
+        android:visibility="gone"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

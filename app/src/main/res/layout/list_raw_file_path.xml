@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/filepicker_favorite_label"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/margin_4"
+    android:paddingTop="@dimen/margin_16"
+    android:paddingEnd="@dimen/margin_12"
+    android:textColor="@color/text_black"
+    android:paddingBottom="@dimen/margin_16"
+    android:textSize="@dimen/textsize_16"
+    tools:text="/storage/emulated/0" />

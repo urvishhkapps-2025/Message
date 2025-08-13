@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="match_parent"
+android:layout_height="wrap_content"
+    android:paddingTop="@dimen/margin_8"
+    android:paddingBottom="@dimen/margin_8">
+
+    <TextView
+        android:id="@+id/thread_sent_attachment_label"
+          android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/item_sent_background"
+        android:drawableEnd="@drawable/ic_attach_file_vector"
+        android:drawablePadding="@dimen/margin_4"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/margin_12"
+        android:paddingTop="@dimen/margin_12"
+        android:paddingEnd="@dimen/margin_4"
+        android:paddingBottom="@dimen/margin_12"
+        android:text="@string/attachment"
+        android:textSize="@dimen/textsize_14" />
+
+</RelativeLayout>

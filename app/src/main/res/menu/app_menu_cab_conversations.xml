@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_cab_delete"
+        android:icon="@drawable/icon_delete"
+        android:title="@string/delete"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_cab_add_number_to_contact"
+        android:icon="@drawable/icon_add_user"
+        android:title="@string/add_number_to_contact"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_cab_dial_number"
+        android:icon="@drawable/ic_phone_vector_black"
+        android:title="@string/dial_number"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_cab_block_number"
+        android:icon="@drawable/icon_block_user"
+        android:title="@string/block_number"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_menu_cab_copy_number"
+        android:title="@string/copy_number_to_clipboard"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_cab_mark_as_read"
+        android:title="@string/mark_as_read"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_cab_mark_as_unread"
+        android:title="@string/mark_as_unread"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_cab_pin_conversation"
+        android:icon="@drawable/icon_pin"
+        android:title="@string/pin_conversation"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_cab_unpin_conversation"
+        android:title="@string/unpin_conversation"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_cab_select_all"
+        android:title="@string/select_all"
+        app:showAsAction="never" />
+</menu>

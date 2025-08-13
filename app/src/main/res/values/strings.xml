@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+    <string name="app_name">Message Pro</string>
+    <string name="app_launcher_name">Message Pro</string>
+    <string name="type_a_message">Type a message…</string>
+    <string name="message_not_sent_short">Message not sent</string>
+    <string name="message_not_sent_touch_retry">Not sent. Touch to retry.</string>
+    <string name="message_sending_error">Your message to \'%s\' has not been sent</string>
+    <string name="add_person">Add Person</string>
+    <string name="attachment">Attachment</string>
+    <string name="no_conversations_found">No conversations have been found</string>
+    <string name="no_personal_conversations_found">No personal conversations have been found</string>
+    <string name="no_otp_messages_found">No OTP messages have been found</string>
+    <string name="no_transaction_messages_found">No transaction messages have been found</string>
+    <string name="no_offer_messages_found">No offer messages have been found</string>
+    <string name="start_conversation">Start a conversation</string>
+    <string name="reply">Reply</string>
+    <string name="show_character_counter">Show a character counter at writing messages</string>
+    <string name="loading_messages">Loading messages…</string>
+    <string name="txt_draft">Draft</string>
+    <string name="sending">Sending…</string>
+    <string name="pin_conversation">Pin to the top</string>
+    <string name="unpin_conversation">Unpin</string>
+    <string name="new_conversation">New conversation</string>
+    <string name="add_contact_or_number">Add Contact or Number…</string>
+    <string name="suggestions">Suggestions</string>
+    <string name="channel_received_sms">Received SMS</string>
+    <string name="new_message">New message</string>
+    <string name="mark_as_read">Mark as Read</string>
+    <string name="mark_as_unread">Mark as Unread</string>
+    <string name="delete_whole_conversation_confirmation">Are you sure you want to delete all messages of this conversation?</string>
+    <plurals name="delete_conversations">
+        <item quantity="one">%d conversation</item>
+        <item quantity="other">%d conversations</item>
+    </plurals>
+    <plurals name="delete_messages">
+        <item quantity="one">%d message</item>
+        <item quantity="other">%d messages</item>
+    </plurals>
+    <string name="lock_screen_visibility">Lock screen notification visibility</string>
+    <string name="sender_and_message">Sender and message</string>
+    <string name="sender_only">Sender only</string>
+    <string name="enable_delivery_reports">Enable delivery reports</string>
+    <string name="use_simple_characters">Remove accents and diacritics at sending messages</string>
+    <string name="mms_file_size_limit">Resize sent MMS images</string>
+    <string name="mms_file_size_limit_none">No limit</string>
+    <string name="messages">Messages</string>
+    <string name="export_messages">Export Messages</string>
+    <string name="import_messages">Import messages</string>
+    <string name="admob_banner_ads_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_interstitial_ads_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_native_ads_id">ca-app-pub-3940256099942544/2247696110</string>-->
+    <string name="app_open_ads_id">ca-app-pub-3940256099942544/3419835294</string>
+    <string name="adx_banner_ads_id">/6499/example/banner</string>
+    <string name="adx_interstitial_ads_id">/6499/example/interstitial</string>
+    <string name="adx_native_ads_id">/6499/example/native</string>
+    <string name="adx_app_open_ads_id">/6499/example/app-open</string>
+    <string name="ad_attribution">ad</string>
+    <string name="txt_transition_1">Transition 1</string>
+    <string name="txt_more">More</string>
+    <string name="alert">Alert</string>
+    <string name="txt_copy">Copy</string>
+    <string name="txt_privacy_policy">Privacy Policy</string>
+    <string name="txt_rateus">Rate Us</string>
+
+    <string name="rating_dialog_experience">How was your experience with us?</string>
+    <string name="rating_dialog_maybe_later">Maybe later</string>
+    <string name="rating_dialog_never">Never</string>
+    <string name="rating_dialog_feedback_title">Feedback</string>
+    <string name="rating_dialog_submit">Submit</string>
+    <string name="rating_dialog_cancel">Cancel</string>
+    <string name="rating_dialog_suggestions">Suggest us what went wrong and we\'ll work on it!</string>
+
+    <string name="invalid_destination">Invalid destination address.</string>
+    <string name="service_not_activated">Service not activated on network.</string>
+    <string name="service_message_not_found">Message expired or not available.</string>
+    <string name="service_network_problem">Couldn\'t send due to network problem.</string>
+    <string name="message_queued">Currently can\'t send your message. It will be sent when the service becomes available.</string>
+    <string name="download_later">Can\'t download right now. Try again later.</string>
+    <string name="no_apn">No APN specified for the app, you need to set it up in settings!</string>
+    <string name="no_subject">(No subject)</string>
+    <string name="unknown_sender">Unknown sender</string>
+    <string name="dl_failure_notification">Couldn\'t download message </string>
+
+    <string name="ok">OK</string>
+    <string name="txt_sender_does_not_support_replies">Sender does not support replies</string>
+    <string name="backup_and_restore">Backup and Restore</string>
+    <string name="currently_only_sms_is_supported_by_backup_and_restore_nmms_support_and_scheduled_backup_and_will_be_coming_soon">Currently, only SMS is supported by backup and restore.\nMMS support and scheduled backup and will be coming soon!</string>
+    <string name="last_backup">Last Backup</string>
+    <string name="select_backup">Select backup</string>
+    <string name="restore">Restore</string>
+    <string name="backup_now">Backup Now</string>
+    <string name="are_you_sure_you_want_to_export_sms_">Are you sure you want to export messages ?</string>
+    <string name="are_you_sure_you_want_to_import_sms_">Are you sure you want to import messages ?</string>
+    <string name="no_backup_available">No backup available</string>
+    <string name="backups">Backups</string>
+    <string name="message_backup">/Message/Backup</string>
+    <string name="backing_up_messages">Backing up messages</string>
+    <string name="importing_messages">Restore Messages</string>
+    <string name="txt_next">Next</string>
+    <string name="txt_start">Let\'s Go</string>
+    <string name="txt_please_grant_notification_permission_from_app_settings">Please grant Notification permission from App Settings</string>
+
+    <string name="text_intro_title1">Welcome to Text Messages App</string>
+    <string name="text_intro_sub_title1">Best Experience with yours, share photos and videos with high quality…</string>
+
+    <string name="text_intro_title2">Take Backup and Restore SMS</string>
+    <string name="text_intro_sub_title2">One touch to Backup and Restore your Messages…</string>
+
+    <string name="text_intro_title3">Set Default App</string>
+    <string name="text_intro_sub_title3">To send or receive messages, You must set as the default app…</string>
+
+
+    <string name="text_header_default_app">Set As Default Application</string>
+    <string name="text_dec_default_app">To send or receive messages, You must set it as the default application. Do you want the messages to become your default application ?</string>
+
+    <string name="text_header_notification">Notification Permission</string>
+    <string name="text_desc_notification">A permission is required when Messages App receive messages notification, You must allow permission.</string>
+
+</resources>

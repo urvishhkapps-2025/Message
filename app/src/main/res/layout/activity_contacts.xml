@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background_color"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/appTopToolbar"
+        layout="@layout/toolbar" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/screen_background_color"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/llHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_16"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/llEditText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/textsize_16"
+                            android:layout_marginEnd="@dimen/textsize_16"
+                            android:layout_weight="1"
+                            android:background="@drawable/logo_edittext_backgrond"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/margin_8">
+
+                            <ImageView
+                                style="@style/Icon_24DP"
+                                android:src="@drawable/icon_search"
+                                app:tint="@color/text_grey" />
+
+                            <TextView
+                                android:id="@+id/tvSearchText"
+                                style="@style/EditText"
+                                android:background="@null"
+                                android:hint="@string/search"
+                                android:textSize="@dimen/textsize_14" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/tvSuggestions"
+                        style="@style/Text_Light_Grey"
+                        android:layout_below="@+id/llHeader"
+                        android:paddingHorizontal="@dimen/margin_16"
+                        android:paddingBottom="@dimen/margin_8"
+                        android:text="@string/suggestions"
+                        android:textSize="@dimen/textsize_14" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/suggestionsHorizontalScroll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvSuggestions"
+                        android:layout_marginHorizontal="@dimen/margin_16"
+                        android:layout_marginBottom="@dimen/margin_8"
+                        android:overScrollMode="never"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:id="@+id/llSuggestionsView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:divider="@drawable/linear_layout_horizontal_divider"
+                            android:orientation="horizontal"
+                            android:showDividers="middle" />
+
+                    </HorizontalScrollView>
+
+                </RelativeLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivThumbNoContatc"
+                    style="@style/Icon_100DP"
+                    android:src="@drawable/icon_placeholder"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/tvNoContact"
+                    style="@style/Text_Regular"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_16"
+                    android:text="@string/no_access_to_contacts"
+                    android:textSize="@dimen/textsize_16"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/tvNoContact2"
+                    style="@style/Text_Blue_Italic"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_16"
+                    android:text="@string/request_the_required_permissions"
+                    android:textSize="@dimen/textsize_16"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+
+            <com.hkapps.messagepro.views.CustomRecyclerView
+                android:id="@+id/recyclerViewContacts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+<!--            <com.reddit.indicatorfastscroll.FastScrollerView-->
+<!--                android:id="@+id/fastScrollerViewContact"-->
+<!--                android:layout_width="32dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignTop="@+id/recyclerViewContacts"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:paddingTop="@dimen/margin_24"-->
+<!--                android:paddingBottom="@dimen/margin_24" />-->
+
+<!--            <com.reddit.indicatorfastscroll.FastScrollerThumbView-->
+<!--                android:id="@+id/fastScrollerThumbViewContacts"-->
+<!--                android:layout_width="@dimen/margin_56"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_alignTop="@+id/fastScrollerViewContact"-->
+<!--                android:layout_alignBottom="@+id/fastScrollerViewContact"-->
+<!--                android:layout_marginEnd="@dimen/margin_16"-->
+<!--                android:layout_toStartOf="@+id/fastScrollerViewContact" />-->
+
+        </RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

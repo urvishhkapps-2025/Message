@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background_color">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/adViewBanner">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/screen_background_color"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fitsSystemWindows="true"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+
+                    <LinearLayout
+                        android:id="@+id/llHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/textsize_16"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/textsize_16"
+                            android:layout_marginEnd="@dimen/textsize_16"
+                            android:layout_weight="1"
+                            android:transitionName="@string/app_name"
+                            android:background="@drawable/logo_edittext_backgrond"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/margin_8">
+
+                            <ImageView
+                                style="@style/Icon_24DP"
+                                android:src="@drawable/icon_search"
+                                app:tint="@color/text_grey" />
+
+                            <EditText
+                                android:id="@+id/etSearchText"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@color/transparent"
+                                android:gravity="center_vertical"
+                                android:hint="@string/search"
+                                android:maxLines="1"
+                                android:paddingHorizontal="@dimen/margin_16"
+                                android:paddingVertical="@dimen/margin_8"
+                                android:textColor="@color/text_black"
+                                android:textColorHint="@color/text_grey"
+                                android:textSize="@dimen/textsize_14" />
+
+                            <ImageView
+                                android:id="@+id/ivSeachClear"
+                                style="@style/Icon_24DP"
+                                android:foreground="@drawable/logo_ripple_oval"
+                                android:padding="@dimen/margin_3"
+                                android:src="@drawable/icon_closed"
+                                android:visibility="gone" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvCancel"
+                            style="@style/Text_Blue"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/textsize_16"
+                            android:text="@string/cancel" />
+                    </LinearLayout>
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <com.hkapps.messagepro.views.CustomRecyclerView
+                    android:id="@+id/recyclerViewsSuggestions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:overScrollMode="never"
+                    android:scrollbars="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <com.hkapps.messagepro.views.CustomRecyclerView
+                    android:id="@+id/recyclerSearchContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/recyclerViewsSuggestions"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"
+                    android:scrollbars="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ivThumbNodata"
+                        style="@style/Icon_200DP"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/icon_placeholder" />
+
+                    <TextView
+                        android:id="@+id/tvNoData1"
+                        style="@style/Text_Grey_Bold"
+                        android:layout_marginTop="@dimen/textsize_16"
+                        android:gravity="center"
+                        android:text="@string/no_items_found"
+                        android:textSize="@dimen/textsize_22" />
+
+                    <TextView
+                        android:id="@+id/tvNoData2"
+                        style="@style/Text_Grey"
+                        android:text="@string/type_2_characters"
+                        android:textSize="@dimen/textsize_14" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/adViewBanner"
+        style="@style/BannerAdsView" />
+
+</RelativeLayout>

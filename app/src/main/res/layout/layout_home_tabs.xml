@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/linTabParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin_5"
+        android:background="@drawable/tab_no_selection"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/margin_10"
+        android:paddingVertical="@dimen/margin_5">
+
+        <ImageView
+            android:id="@+id/ivTabThumb"
+            android:layout_width="@dimen/margin_15"
+            android:layout_height="@dimen/margin_15"
+            android:padding="@dimen/margin_1"
+            android:src="@drawable/icon_copy"
+            app:tint="@color/text_grey" />
+
+        <TextView
+            android:id="@+id/tvTopTitle"
+            style="@style/Text_Grey_Bold"
+            android:layout_marginStart="@dimen/margin_5"
+            android:layout_marginEnd="@dimen/margin_5"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/textsize_15"
+            tools:text="Personal" />
+
+    </LinearLayout>
+
+</LinearLayout>

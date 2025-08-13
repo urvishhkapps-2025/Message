@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background_color">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/view_pager"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_into_thumbs" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/lin_bottom"
+        android:layout_alignParentTop="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_55"
+        android:layout_above="@+id/lin_bottom"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:id="@+id/layoutDots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lin_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_inro_button_bg" />
+
+        <TextView
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/margin_50"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_20"
+            android:gravity="center"
+            android:minWidth="120dp"
+            android:text="@string/txt_next"
+            android:textColor="@color/whiteColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

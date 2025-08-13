@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_8">
+
+    <TextView
+        android:id="@+id/tvDateTime"
+        style="@style/Text_Grey"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/textsize_14"
+        tools:text="January 12, 13:30 PM" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/tvDateTime"
+        android:layout_alignBottom="@id/tvDateTime"
+        android:layout_toStartOf="@id/tvDateTime"
+        android:foreground="@drawable/logo_ripple_oval">
+
+
+        <ImageView
+            android:id="@+id/ivSim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_sim" />
+
+
+        <TextView
+            android:id="@+id/tvSimNumber"
+            style="@style/Text_White"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textSize="@dimen/textsize_13"
+            tools:text="2" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

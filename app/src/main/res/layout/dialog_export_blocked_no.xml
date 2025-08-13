@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Custom_CardView_Dialog"
+    android:layout_width="match_parent"
+    android:layout_marginHorizontal="@dimen/margin_8"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvExportBlockTitle"
+        style="@style/Text_Regular_Bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_5"
+        android:text="@string/menu_export_blocked_numbers"
+        android:textSize="@dimen/textsize_18" />
+
+    <TextView
+        android:id="@+id/tvExportBlockDisc"
+        style="@style/Text_Regular"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/margin_4"
+        android:paddingStart="@dimen/margin_4"
+        android:paddingTop="@dimen/margin_4"
+        android:paddingBottom="@dimen/margin_16" />
+
+    <EditText
+        android:id="@+id/rtExportBlockFileName"
+        style="@style/EditText"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/margin_18"
+        android:hint="@string/filename_without_txt"
+        android:singleLine="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvExportBlockCancel"
+            style="@style/Text_Dialog_button"
+            android:text="@string/cancel" />
+
+        <View style="@style/Devider_Column_1PX" />
+
+        <TextView
+            android:id="@+id/tvExportBlockOk"
+            style="@style/Text_Dialog_button"
+            android:text="@string/yes" />
+
+    </LinearLayout>
+</LinearLayout>

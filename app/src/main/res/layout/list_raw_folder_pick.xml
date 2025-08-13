@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingHorizontal="@dimen/margin_16"
+    android:paddingVertical="@dimen/margin_4">
+
+    <ImageView
+        android:id="@+id/ivThumb"
+        style="@style/Icon_48DP"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/margin_5"
+        android:src="@drawable/logo_folder" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/ivThumb"
+        android:padding="@dimen/margin_4">
+
+        <TextView
+            android:id="@+id/tvFolderTitle"
+            style="@style/Text_White"
+            android:textColor="@color/text_black"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/textsize_16"
+            tools:text="Directory" />
+
+        <TextView
+            android:id="@+id/tvFolderSize"
+            style="@style/Text_Grey"
+            android:layout_below="@+id/tvFolderTitle"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/textsize_14"
+            tools:text="1 KB" />
+
+    </RelativeLayout>
+</RelativeLayout>

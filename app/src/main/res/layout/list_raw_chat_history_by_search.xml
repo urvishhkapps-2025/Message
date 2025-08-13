@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_16"
+        android:paddingBottom="@dimen/margin_16">
+
+        <RelativeLayout
+            android:id="@+id/rlTopIcon"
+            android:layout_width="@dimen/margin_48"
+            android:layout_height="@dimen/margin_48"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:background="@drawable/logo_blue_circle"
+            android:padding="@dimen/margin_5">
+
+            <ImageView
+                android:id="@+id/ivThumb"
+                style="@style/Icon_64DP"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_sms" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvConversationTitle"
+            style="@style/Text_Regular"
+            android:layout_toStartOf="@+id/tvConversationDate"
+            android:layout_toEndOf="@+id/rlTopIcon"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="1"
+            android:paddingEnd="@dimen/margin_16"
+            android:textSize="@dimen/textsize_18"
+            tools:text="VX-FMA09K" />
+
+        <TextView
+            android:id="@+id/tvConversationDate"
+            style="@style/Text_Grey"
+            android:layout_alignTop="@+id/tvConversationTitle"
+            android:layout_alignBottom="@+id/tvConversationTitle"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/textsize_16"
+            android:textSize="@dimen/textsize_12"
+            tools:text="18:20" />
+
+        <TextView
+            android:id="@+id/tvConversationDesc"
+            style="@style/Text_Dark_Grey"
+            android:layout_below="@+id/tvConversationTitle"
+            android:layout_toEndOf="@+id/rlTopIcon"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="2"
+            android:paddingEnd="@dimen/margin_16"
+            android:textSize="@dimen/textsize_14"
+            tools:text="Hey, How are you!!" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/Devider_1PX"
+        android:layout_marginStart="@dimen/margin_70" />
+</LinearLayout>

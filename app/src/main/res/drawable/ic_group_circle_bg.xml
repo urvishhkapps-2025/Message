@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/attendee_circular_background">
+        <shape android:shape="oval">
+            <solid android:color="@color/color_primary"/>
+        </shape>
+    </item>
+    <item android:bottom="@dimen/margin_8" android:drawable="@drawable/ic_people_vector" android:left="@dimen/margin_8" android:right="@dimen/margin_8" android:top="@dimen/margin_8"/>
+</layer-list>

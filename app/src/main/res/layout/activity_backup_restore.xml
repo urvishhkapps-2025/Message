@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background_color">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardToolbar"
+        style="@style/Toolbard_Card">
+
+        <include
+            android:id="@+id/appTopToolbar"
+            layout="@layout/toolbar" />
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardToolbar"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_8"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/llLastBackup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="@drawable/logo_ripple"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_8">
+
+                <ImageView
+                    android:id="@+id/tvThumb"
+                    style="@style/Icon_24DP"
+                    android:padding="@dimen/margin_2"
+                    android:src="@drawable/ic_history"
+                    app:tint="@color/text_grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        style="@style/Text_Dark_Grey"
+                        android:text="@string/last_backup"
+                        android:textSize="@dimen/textsize_16" />
+
+                    <TextView
+                        android:id="@+id/tvBackupDate"
+                        style="@style/Text_Grey"
+                        android:text="@string/no_backup_available"
+                        android:textSize="@dimen/textsize_14" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llRestore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:foreground="@drawable/logo_ripple"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_8">
+
+                <ImageView
+                    style="@style/Icon_24DP"
+                    android:padding="@dimen/margin_1"
+                    android:src="@drawable/icon_save"
+                    app:tint="@color/text_grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        style="@style/Text_Dark_Grey"
+                        android:text="@string/restore"
+                        android:textSize="@dimen/textsize_16" />
+
+                    <TextView
+                        style="@style/Text_Grey"
+                        android:text="@string/select_backup"
+                        android:textSize="@dimen/textsize_14" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <View
+            style="@style/Devider_1PX"
+            android:layout_marginVertical="@dimen/margin_2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_8"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                style="@style/Text_Grey"
+                android:text="@string/currently_only_sms_is_supported_by_backup_and_restore_nmms_support_and_scheduled_backup_and_will_be_coming_soon"
+                android:textSize="@dimen/textsize_12" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llLoadingView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_8"
+            android:visibility="gone">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/progressBar"
+                android:layout_width="@dimen/margin_170"
+                android:layout_height="@dimen/margin_170"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/backup" />
+
+            <TextView
+                android:id="@+id/tvBackupTitle"
+                style="@style/Text_Dark_Grey"
+                android:layout_marginVertical="@dimen/margin_5"
+                android:text="@string/backing_up_messages"
+                android:textSize="@dimen/textsize_16" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/adViewBanner"
+        android:layout_below="@+id/cardToolbar">
+
+        <LinearLayout
+            android:id="@+id/llBackupNow"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/margin_40"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_24"
+            android:layout_marginEnd="@dimen/margin_24"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:background="@drawable/apk_button_floting"
+            android:elevation="@dimen/margin_5"
+            android:foreground="@drawable/logo_ripple_oval"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/margin_20"
+            android:paddingEnd="@dimen/margin_24">
+
+            <ImageView
+                style="@style/Icon_24DP"
+                android:padding="@dimen/margin_3"
+                android:src="@drawable/ic_upload"
+                app:tint="@android:color/white" />
+
+            <TextView
+                style="@style/Text_Dark_Grey"
+                android:layout_marginStart="@dimen/margin_10"
+                android:text="@string/backup_now"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textsize_14" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/adViewBanner"
+        style="@style/BannerAdsView" />
+
+</RelativeLayout>
+
+

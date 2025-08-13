@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="end"
+    android:paddingEnd="@dimen/margin_16">
+
+    <ImageView
+        android:id="@+id/tvMessageSuccess"
+        android:layout_width="@dimen/margin_16"
+        android:layout_height="@dimen/margin_16"
+        android:src="@drawable/icon_check" />
+
+</RelativeLayout>

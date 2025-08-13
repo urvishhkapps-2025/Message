@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relParent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fl_adplaceholder">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/screen_background_color">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/screen_background_color"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fitsSystemWindows="true"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+
+                    <LinearLayout
+                        android:id="@+id/llHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:layout_marginVertical="@dimen/margin_5"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/linSearch"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/textsize_16"
+                            android:layout_marginEnd="@dimen/textsize_10"
+                            android:layout_weight="1"
+                            android:background="@drawable/logo_edittext_backgrond"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/margin_8">
+
+                            <ImageView
+                                android:id="@+id/tvSetting1"
+                                style="@style/Icon_24DP"
+                                android:padding="@dimen/margin_2"
+                                android:src="@drawable/icon_humburger"
+                                app:tint="@color/text_grey" />
+
+                            <TextView
+                                android:id="@+id/tvSearch"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@color/transparent"
+                                android:gravity="center_vertical"
+                                android:hint="@string/search"
+                                android:maxLines="1"
+                                android:paddingHorizontal="@dimen/margin_16"
+                                android:paddingVertical="@dimen/margin_8"
+                                android:textColor="@color/text_black"
+                                android:textColorHint="@color/text_grey"
+                                android:textSize="@dimen/textsize_16" />
+
+
+                        </LinearLayout>
+
+
+                        <ImageView
+                            android:id="@+id/tvSetting2"
+                            style="@style/Icon_32DP"
+                            android:layout_marginEnd="@dimen/textsize_16"
+                            android:padding="@dimen/margin_2"
+                            android:src="@drawable/icon_setting"
+                            app:tint="@color/text_grey" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout"
+                    style="@style/Tab_Layout"
+                    android:layout_marginHorizontal="@dimen/margin_10"
+                    android:layout_marginTop="5dp"
+                    app:tabBackground="@android:color/transparent"
+                    app:tabIndicatorAnimationMode="elastic"
+                    app:tabRippleColor="@null" />
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tabLayout" />
+
+            </RelativeLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabContactList"
+            style="@style/FloatingAction_Button"
+            android:src="@drawable/icon_plus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_adplaceholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/screen_background_color"
+        android:minHeight="@dimen/margin_60" />
+
+</RelativeLayout>
+
+
+

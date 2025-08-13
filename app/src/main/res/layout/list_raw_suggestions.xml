@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llMain"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/Icon_55DP"
+        android:padding="@dimen/margin_5"
+        android:background="@drawable/logo_blue_circle">
+
+        <ImageView
+            android:id="@+id/ivThumb"
+            style="@style/Icon_55DP"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_sms" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/Text_Regular"
+        android:layout_marginTop="@dimen/margin_5"
+        android:ellipsize="end"
+        android:gravity="center_horizontal"
+        android:maxLines="1"
+        android:textSize="@dimen/textsize_10"
+        tools:text="How are you!!" />
+
+
+</LinearLayout>

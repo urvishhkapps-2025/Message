@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_contact_frame"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="@drawable/logo_ripple">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white_card"
+        android:paddingStart="@dimen/margin_2"
+        android:paddingTop="@dimen/margin_8"
+        android:paddingEnd="@dimen/margin_16"
+        android:paddingBottom="@dimen/margin_8">
+
+
+        <RelativeLayout
+            android:id="@+id/rlTopIcon"
+            android:layout_width="@dimen/margin_48"
+            android:layout_height="@dimen/margin_48"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:background="@drawable/logo_blue_circle">
+
+            <ImageView
+                android:id="@+id/item_contact_image"
+                style="@style/Icon_24DP"
+                android:layout_width="@dimen/margin_48"
+                android:layout_height="@dimen/margin_48"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_sms" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/item_contact_name"
+            style="@style/Text_Regular"
+            android:layout_toEndOf="@+id/rlTopIcon"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="1"
+            android:paddingEnd="@dimen/margin_16"
+            android:textSize="@dimen/textsize_18"
+            tools:text="VX-FMA09K" />
+
+
+        <TextView
+            android:id="@+id/item_contact_number"
+            style="@style/Text_Dark_Grey"
+            android:layout_below="@+id/item_contact_name"
+            android:layout_alignStart="@+id/item_contact_name"
+            android:layout_toEndOf="@+id/rlTopIcon"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="2"
+            android:paddingEnd="@dimen/margin_16"
+            android:textSize="@dimen/textsize_14"
+            tools:text="Hey, How are you!!" />
+
+    </RelativeLayout>
+</FrameLayout>

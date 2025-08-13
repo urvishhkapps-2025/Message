@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/breadcrumb_text"
+    style="@style/Text_White"
+    android:paddingLeft="@dimen/margin_4"
+    android:paddingTop="@dimen/margin_8"
+    android:paddingRight="@dimen/margin_4"
+    android:paddingBottom="@dimen/margin_8"
+    android:textColor="#707070"
+    android:textSize="@dimen/textsize_14" />

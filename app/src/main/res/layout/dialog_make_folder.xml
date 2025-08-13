@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Custom_CardView_Dialog"
+    android:layout_width="match_parent"
+    android:layout_marginHorizontal="@dimen/margin_8">
+
+
+    <TextView
+        style="@style/Text_Regular_Bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_8"
+        android:text="@string/create_new_folder"
+        android:textSize="@dimen/textsize_18" />
+
+    <TextView
+        android:id="@+id/tvCreateNewFolderPath"
+        style="@style/Text_Dark_Grey"
+        android:gravity="left" />
+
+
+    <EditText
+        android:id="@+id/etFolderName"
+        style="@style/EditText"
+        android:layout_width="match_parent"
+        android:layout_marginVertical="@dimen/margin_16"
+        android:hint="@string/type_a_message"
+        android:inputType="textCapSentences"
+        android:singleLine="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvCreateNewFolderCancel"
+            style="@style/Text_Dialog_button"
+            android:text="@string/cancel" />
+
+        <View style="@style/Devider_Column_1PX" />
+
+        <TextView
+            android:id="@+id/tvCreateNewFolderOk"
+            style="@style/Text_Dialog_button"
+            android:text="@string/yes" />
+
+    </LinearLayout>
+</LinearLayout>

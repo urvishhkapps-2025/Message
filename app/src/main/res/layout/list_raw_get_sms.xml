@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/conMainHolder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_8"
+    android:layout_marginBottom="@dimen/margin_8"
+    android:paddingHorizontal="@dimen/margin_8">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.8">
+
+        <LinearLayout
+            android:id="@+id/llHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <ImageView
+            android:id="@+id/tvPlayVideo"
+            android:layout_width="@dimen/margin_36"
+            android:layout_height="@dimen/margin_36"
+            android:layout_alignEnd="@+id/llHolder"
+            android:layout_alignBottom="@+id/llHolder"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:src="@drawable/ic_play_outline_vector"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/llMessageBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llHolder">
+
+            <TextView
+                android:id="@+id/tvMessageBody"
+                style="@style/Text_Regular"
+                android:layout_marginStart="@dimen/margin_12"
+                android:autoLink="email|web|phone|map"
+                android:background="@drawable/item_received_background"
+                android:gravity="left"
+                android:linksClickable="true"
+                android:padding="@dimen/margin_12"
+                android:textSize="@dimen/textsize_14"
+                tools:text="Received message" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llCopyOTP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llMessageBody"
+            android:layout_alignEnd="@+id/llMessageBody"
+            android:layout_marginVertical="@dimen/margin_8"
+            android:background="@drawable/logo_otp_background_boder"
+            android:foreground="@drawable/logo_ripple_8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/margin_16"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_marginEnd="@dimen/margin_3"
+                android:id="@+id/ivPhotoGallery"
+                style="@style/Icon_20DP"
+                android:src="@drawable/icon_copy"
+                app:tint="@color/text_grey" />
+
+            <TextView
+                android:id="@+id/tvCopy"
+                style="@style/Text_Grey"
+                android:gravity="center"
+                android:textSize="@dimen/textsize_14"
+                android:textStyle="bold"
+                tools:text="Copy" />
+
+            <TextView
+                android:id="@+id/tvCopyOTP"
+                style="@style/Text_Grey"
+                android:gravity="center"
+                android:paddingVertical="@dimen/margin_6"
+                android:paddingStart="@dimen/margin_10"
+                android:textSize="@dimen/textsize_14"
+                android:textStyle="bold"
+                tools:text="345754" />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/ivArrow"
+            style="@style/Icon_24DP"
+            android:layout_alignBottom="@+id/llMessageBody"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/icon_recive_sms_curv"
+            app:tint="@color/get_message_color" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

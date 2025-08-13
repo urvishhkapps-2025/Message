@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="default_font_size">1</integer>
+    <string name="cancel">Cancel</string>
+    <string name="nothing">Nothing</string>
+    <string name="invalid_file_format">Invalid file format</string>
+    <string name="an_error_occurred">An error occurred: %s</string>
+    <string name="no_app_found">No valid app found</string>
+    <string name="copy_to_clipboard">Copy to clipboard</string>
+    <string name="copy_number_to_clipboard">Copy number to clipboard</string>
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="dial_number">Dial number</string>
+    <string name="number">Number</string>
+    <string name="no_contacts_found">No contacts found</string>
+    <string name="request_the_required_permissions">Request the required permissions</string>
+    <string name="no_access_to_contacts">The app could not access your contacts</string>
+
+    <!-- View types -->
+
+    <!-- Blocked numbers -->
+    <string name="manage_blocked_numbers">Manage blocked numbers</string>
+    <string name="not_blocking_anyone">You are not blocking anyone.</string>
+    <string name="add_a_blocked_number">Add a blocked number</string>
+    <string name="block_number">Block number</string>
+    <string name="blocked_numbers">Blocked numbers</string>
+    <string name="menu_export_blocked_numbers">Export blocked numbers</string>
+    <string name="menu_import_blocked_numbers">Import blocked numbers</string>
+    <string name="must_make_default_dialer">You have to make this app the default dialer app to make use of blocked numbers.</string>
+    <string name="set_as_default">Set as default</string>
+    <string name="block_confirmation">Are you sure you want to block \"%s\"?</string>
+
+    <!-- Favorites -->
+    <string name="favorites">Favorites</string>
+
+    <!-- Search -->
+    <string name="search">Search</string>
+    <string name="type_2_characters">Type in at least 2 characters to start the search.</string>
+
+    <!-- Filters -->
+    <string name="no_items_found">No items found.</string>
+
+    <!-- Permissions -->
+
+    <!-- Renaming -->
+    <string name="filename_without_txt">Filename (without .txt)</string>
+
+    <!-- Copy / Move -->
+    <string name="copying">Copying…</string>
+    <string name="moving">Moving…</string>
+    <string name="could_not_create_folder">Could not create folder %s</string>
+    <string name="could_not_create_file">Could not create file %s</string>
+
+    <!-- Create new -->
+    <string name="create_new_folder">Create new folder</string>
+    <string name="name_taken">A file or folder with that name already exists</string>
+    <string name="invalid_name">The name contains invalid characters</string>
+    <string name="empty_name">Please enter a name</string>
+    <string name="unknown_error_occurred">An unknown error occurred</string>
+
+    <!-- File operation conflicts -->
+    <string name="file_already_exists">File \"%s\" already exists</string>
+    <string name="folder_already_exists">Folder \"%s\" already exists</string>
+    <string name="merge">Merge</string>
+    <string name="keep_both">Keep both</string>
+    <string name="overwrite">Overwrite</string>
+    <string name="skip">Skip</string>
+    <string name="apply_to_all">Apply to all</string>
+
+    <!-- File picker -->
+    <string name="select_folder">Select a folder</string>
+    <string name="select_file">Select a file</string>
+    <string name="confirm_storage_access_title">Confirm external storage access</string>
+    <string name="confirm_storage_access_text">Please choose the top folder of the SD card on the next screen, to grant write access</string>
+    <string name="confirm_storage_access_text_sd">If you don\'t see the SD card, try this</string>
+    <string name="confirm_storage_access_android_text">Please allow the app accessing the selected storage on the next screen by pressing \'Use this folder\' at the bottom.</string>
+
+    <plurals name="items">
+        <item quantity="one">%d item</item>
+        <item quantity="other">%d items</item>
+    </plurals>
+
+    <!-- Are you sure you want to delete 5 items? -->
+
+    <!-- Are you sure you want to delete 5 contacts? -->
+
+    <!-- Storages -->
+    <string name="select_storage">Select storage</string>
+    <string name="internal">Internal</string>
+    <string name="sd_card">SD Card</string>
+    <string name="root">Root</string>
+    <string name="wrong_root_selected">Wrong folder selected, please select the main folder of your SD card</string>
+    <string name="sd_card_usb_same">SD card and USB device paths cannot be the same</string>
+
+    <!-- File properties -->
+
+    <!-- Color customization -->
+    <string name="theme">Theme</string>
+
+    <!-- Themes -->
+
+    <!-- What's new -->
+
+    <!-- Actionbar items -->
+    <string name="delete">Delete</string>
+    <string name="share">Share</string>
+    <string name="share_via">Share via</string>
+    <string name="select_all">Select all</string>
+    <string name="select_text">Select text</string>
+    <string name="maximum_share_reached">You cannot share this much content at once</string>
+    <string name="add_number_to_contact">Add number to contact</string>
+
+    <!-- Sorting -->
+
+    <!-- Confirmation dialog -->
+    <string name="proceed_with_deletion">Are you sure you want to proceed with the deletion?</string>
+    <string name="deletion_confirmation">Are you sure you want to delete %s?</string>
+    <!-- Are you sure you want to move 3 items into the Recycle Bin? -->
+    <string name="yes">Yes</string>
+
+    <!-- Password protection -->
+
+    <!-- Times -->
+
+    <!-- For example: I will be there in 5 minutes -->
+
+    <!-- For example: Event reminder: 3 minutes before -->
+
+    <!-- For example: Postpone reminder by 3 minutes -->
+
+    <!-- For example: Time remaining till the alarm goes off: 6 hours, 5 minutes -->
+
+    <!-- Alarms -->
+
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="customize_notifications">Customize notifications</string>
+    <string name="use_english_language">Use English language</string>
+    <string name="font_size">Font size</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="extra_large">Extra large</string>
+    <string name="use_24_hour_time_format">Use 24-hour time format</string>
+    <string name="settings_exported_successfully">Settings exported successfully</string>
+
+    <!-- Setting sections -->
+
+    <!-- Default tab to open -->
+
+    <!-- Recycle Bin -->
+
+    <!-- Import / Export -->
+    <string name="importing_successful">Importing successful</string>
+    <string name="exporting_successful">Backup successful</string>
+    <string name="exporting_failed">Exporting failed</string>
+    <string name="importing_some_entries_failed">Importing some entries failed</string>
+    <string name="no_entries_for_exporting">No entries for exporting have been found</string>
+
+    <!-- OTG devices -->
+    <string name="usb">USB</string>
+    <string name="confirm_usb_storage_access_text">Please choose the top folder of the USB device on the next screen, to grant access</string>
+    <string name="wrong_root_selected_usb">Wrong folder selected, please select the main folder of your USB device</string>
+
+    <!-- Dates -->
+
+    <!-- in January -->
+
+    <!-- Pro version -->
+
+    <!-- About -->
+
+    <!-- New app (do not translate anything on the 4th line) -->
+
+    <string name="sideloaded_app">
+        <![CDATA[
+            It looks like your app version is corrupt. Please download the original version <a href="%s">here</a>.
+        ]]>
+    </string>
+
+
+
+</resources>

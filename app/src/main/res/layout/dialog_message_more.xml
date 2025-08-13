@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Custom_CardView_Dialog"
+    android:paddingEnd="@dimen/margin_50">
+
+    <LinearLayout
+        android:id="@+id/llDial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/margin_100"
+        android:layout_marginTop="@dimen/margin_5"
+        android:foreground="@drawable/logo_ripple"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Text_Regular"
+            android:padding="@dimen/margin_5"
+            android:paddingStart="@dimen/margin_16"
+            android:textSize="@dimen/textsize_16"
+            android:text="@string/dial_number" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5"
+        android:foreground="@drawable/logo_ripple"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Text_Regular"
+            android:padding="@dimen/margin_5"
+            android:paddingStart="@dimen/margin_16"
+            android:textSize="@dimen/textsize_16"
+            android:text="@string/block_number" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llMarkUnread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5"
+        android:foreground="@drawable/logo_ripple"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Text_Regular"
+            android:padding="@dimen/margin_5"
+            android:paddingStart="@dimen/margin_16"
+            android:textSize="@dimen/textsize_16"
+            android:text="@string/mark_as_unread" />
+
+    </LinearLayout>
+
+</LinearLayout>
+

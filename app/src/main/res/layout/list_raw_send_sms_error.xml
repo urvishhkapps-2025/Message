@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvMessageError"
+    android:layout_width="match_parent"
+    style="@style/Text_Red_Error"
+    android:gravity="end"
+    android:paddingEnd="@dimen/margin_16"
+    android:text="@string/message_not_sent_touch_retry"
+    android:textSize="@dimen/textsize_12" />

@@ -1,0 +1,35 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/grey_black</item>
+        <item name="colorAccent">@color/color_accent</item>
+
+        <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
+        <item name="spinnerDropDownItemStyle">@style/SpinnerItem.DropDownItem</item>
+        <item name="android:spinnerDropDownItemStyle">@style/SpinnerItem.DropDownItem</item>
+        <item name="buttonStyle">@style/MyTransparentButton</item>
+        <item name="android:buttonStyle">@style/MyTransparentButton</item>
+<!--        <item name="android:windowTranslucentStatus">true</item>-->
+        <item name="android:textColor">@color/black</item>
+        <item name="bottomSheetDialogTheme">@style/BottomSheetDialogTheme</item>
+<!--        <item name="android:windowNoTitle">true</item>-->
+        <item name="android:windowActionBar">false</item>
+<!--        <item name="android:windowFullscreen">true</item>-->
+        <item name="android:fontFamily">@font/sans_regilar</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <item name="android:textColorSecondary">@color/black</item>
+        <item name="android:itemBackground">@color/color_white_card</item>
+        <item name="android:actionModeBackground">@color/get_message_color</item>
+        <item name="android:actionOverflowButtonStyle">@style/AppTheme.OverflowActionBar</item>
+        <item name="android:itemTextAppearance">@style/myCustomMenuTextAppearance</item>
+        <item name="android:actionModeCloseDrawable">@drawable/icon_back</item>
+
+        <item name="android:statusBarColor" tools:targetApi="m">@color/whiteColor</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    </style>
+
+
+</resources>

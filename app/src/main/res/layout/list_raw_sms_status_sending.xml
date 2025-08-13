@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvSending"
+    android:layout_width="match_parent"
+    style="@style/Text_Grey"
+    android:gravity="end"
+    android:paddingEnd="@dimen/margin_16"
+    android:text="@string/sending"
+    android:textSize="@dimen/textsize_14" />

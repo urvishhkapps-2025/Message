@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:backgroundTint="@color/dialog_background"
+    app:cardCornerRadius="@dimen/margin_10">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="15dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="@dimen/margin_10"
+        android:paddingEnd="@dimen/margin_30"
+        android:paddingRight="@dimen/margin_30"
+        android:paddingBottom="@dimen/margin_10">
+
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_10" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:paddingLeft="15dp"
+            android:text="Please wait ..."
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/textsize_18" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

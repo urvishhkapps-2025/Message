@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background_color"
+    android:fitsSystemWindows="true">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardToolbar"
+        style="@style/Toolbard_Card">
+
+        <include
+            android:id="@+id/appTopToolbar"
+            layout="@layout/toolbar" />
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rel_option"
+        android:layout_below="@+id/cardToolbar"
+        android:layout_marginBottom="@dimen/margin_2">
+
+        <RelativeLayout
+            android:id="@+id/thread_add_contacts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <View style="@style/Devider_1PX" />
+
+            <LinearLayout
+                android:id="@+id/llAddedContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/confirm_manage_contacts"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_16">
+
+                <TextView
+                    style="@style/Text_Light_Grey"
+                    android:text="To:"
+                    android:textSize="@dimen/margin_16" />
+
+                <LinearLayout
+                    android:id="@+id/selected_contacts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+
+            <View
+                style="@style/Devider_1PX"
+                android:layout_below="@+id/llAddedContact" />
+
+
+            <ImageView
+                android:id="@+id/confirm_manage_contacts"
+                style="@style/Icon_48DP"
+                android:layout_alignParentEnd="true"
+                android:foreground="@drawable/logo_ripple_oval"
+                android:padding="@dimen/margin_10"
+                android:src="@drawable/icon_add" />
+
+
+            <AutoCompleteTextView
+                android:id="@+id/add_contact_or_number"
+                style="@style/EditText"
+                android:layout_below="@+id/llAddedContact"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:completionThreshold="2"
+                android:gravity="center_vertical"
+                android:hint="@string/add_contact_or_number"
+                android:inputType="textCapWords" />
+
+            <View
+                style="@style/Devider_1PX"
+                android:layout_below="@+id/add_contact_or_number" />
+        </RelativeLayout>
+
+
+        <com.hkapps.messagepro.views.CustomRecyclerView
+            android:id="@+id/myRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/llBottom"
+            android:layout_below="@+id/thread_add_contacts"
+            android:overScrollMode="never"
+            android:paddingTop="@dimen/margin_16"
+            android:paddingBottom="@dimen/margin_16"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:stackFromEnd="true" />
+
+        <com.hkapps.messagepro.views.FastScrolling
+            android:id="@+id/thread_messages_fastscroller"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:paddingStart="@dimen/margin_12">
+
+            <include layout="@layout/app_fastscroller_handle_vertical" />
+
+        </com.hkapps.messagepro.views.FastScrolling>
+
+        <LinearLayout
+            android:id="@+id/llBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_white_card"
+            android:elevation="@dimen/margin_10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llReplies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white_card"
+                android:elevation="@dimen/margin_10"
+                android:orientation="vertical">
+
+                <View style="@style/Devider_1PX" />
+
+
+                <HorizontalScrollView
+                    android:id="@+id/thread_attachments_holder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_12"
+                    android:layout_marginBottom="@dimen/margin_4"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/thread_attachments_wrapper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/margin_60"
+                        android:divider="@drawable/linear_layout_horizontal_divider"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/margin_12"
+                        android:paddingEnd="@dimen/margin_12"
+                        android:showDividers="middle" />
+
+                </HorizontalScrollView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/thread_add_attachment"
+                        style="@style/Icon_48DP"
+                        android:layout_marginStart="@dimen/margin_5"
+                        android:foreground="@drawable/logo_ripple_oval"
+                        android:padding="@dimen/margin_12"
+                        android:src="@drawable/icon_plus"
+                        app:tint="@color/only_blue" />
+
+                    <EditText
+                        android:id="@+id/thread_type_message"
+                        style="@style/EditText"
+                        android:layout_width="0dp"
+                        android:layout_marginEnd="@dimen/margin_5"
+                        android:layout_weight="1"
+                        android:hint="@string/type_a_message"
+                        android:inputType="textCapSentences|textMultiLine" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:foreground="@drawable/logo_ripple_oval">
+
+                        <ImageView
+                            android:id="@+id/thread_select_sim_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="@dimen/margin_4"
+                            android:paddingStart="@dimen/margin_8"
+                            android:paddingTop="@dimen/margin_12"
+                            android:paddingEnd="@dimen/margin_8"
+                            android:paddingBottom="@dimen/margin_12"
+                            android:src="@drawable/icon_sim"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/thread_select_sim_number"
+                            style="@style/Text_White"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:textSize="@dimen/textsize_14"
+                            android:visibility="gone"
+                            tools:text="1" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/thread_character_counter"
+                        style="@style/Text_Regular"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/margin_4"
+                        android:paddingEnd="@dimen/margin_4"
+                        android:text="0"
+                        android:textSize="@dimen/textsize_16"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/thread_send_message"
+                        style="@style/Icon_48DP"
+                        android:layout_marginEnd="@dimen/margin_5"
+                        android:clickable="false"
+                        android:contentDescription="@string/ok"
+                        android:foreground="@drawable/logo_ripple_oval"
+                        android:padding="@dimen/margin_10"
+                        android:src="@drawable/ic_send_vector" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llNotReplies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white_card"
+                android:elevation="@dimen/margin_10"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <View style="@style/Devider_1PX" />
+
+                <RelativeLayout
+                    style="@style/Icon_48DP"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txt_sender_does_not_support_replies"
+                        android:textColor="@color/text_black"
+                        android:textSize="@dimen/textsize_14" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/rel_option"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/ivPhotoGallery"
+            android:layout_width="@dimen/margin_48"
+            android:layout_height="@dimen/margin_48"
+            android:layout_weight="1"
+            android:foreground="@drawable/logo_ripple_oval"
+            android:padding="@dimen/margin_10"
+            android:src="@drawable/icon_gallery"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/ivLocation"
+            android:layout_width="@dimen/margin_48"
+            android:layout_height="@dimen/margin_48"
+            android:layout_weight="1"
+            android:foreground="@drawable/logo_ripple_oval"
+            android:padding="@dimen/margin_8"
+            android:src="@drawable/icon_location"
+            android:visibility="gone" />
+
+
+        <ImageView
+            android:id="@+id/ivContact"
+            android:layout_width="@dimen/margin_48"
+            android:layout_height="@dimen/margin_48"
+            android:layout_weight="1"
+            android:foreground="@drawable/logo_ripple_oval"
+            android:padding="@dimen/margin_10"
+            android:src="@drawable/icon_contact" />
+
+    </LinearLayout>
+</RelativeLayout>
