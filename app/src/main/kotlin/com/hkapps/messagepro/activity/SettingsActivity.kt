@@ -8,11 +8,12 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
-import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.hkapps.messagepro.MainAppClass.Companion.instance
 import com.hkapps.messagepro.R
 import com.hkapps.messagepro.databinding.ActivitySettingsBinding
@@ -29,10 +30,15 @@ class SettingsActivity : BaseHomeActivity() {
 
     private lateinit var binding: ActivitySettingsBinding
 
-    lateinit var adViewBanner: RelativeLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(0, systemBars.top, 0, 0)
+            insets
+        }
         appTopToolbar = findViewById(R.id.appTopToolbar)
         setSupportActionBar(appTopToolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
@@ -40,8 +46,8 @@ class SettingsActivity : BaseHomeActivity() {
         supportActionBar!!.title = resources.getString(R.string.settings)
         appTopToolbar?.navigationIcon = ContextCompat.getDrawable(this, R.drawable.icon_back)
 
-        adViewBanner = findViewById(R.id.adViewBanner)
-        instance!!.loadBanner(adViewBanner, this)
+
+        instance!!.loadBanner(binding.adViewBanner, this)
     }
 
 

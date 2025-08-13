@@ -12,6 +12,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.content.ContextCompat
 import androidx.core.util.Pair
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.google.gson.Gson
 import com.hkapps.messagepro.MainAppClass
 import com.hkapps.messagepro.R
@@ -35,9 +37,14 @@ class ContactsActivity : BaseHomeActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityContactsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(0, systemBars.top, 0, 0)
+            insets
+        }
         appTopToolbar = findViewById(R.id.appTopToolbar)
         setSupportActionBar(appTopToolbar)
-        getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
+        getSupportActionBar()!!.setDisplayHomeAsUpEnabled(false)
         getSupportActionBar()!!.setDisplayShowHomeEnabled(true)
         getSupportActionBar()!!.setTitle(resources.getString(R.string.new_conversation))
         appTopToolbar?.setNavigationIcon(ContextCompat.getDrawable(this, R.drawable.icon_back))

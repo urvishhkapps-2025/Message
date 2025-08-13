@@ -10,6 +10,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.google.gson.Gson
 import com.hkapps.messagepro.MainAppClass
 import com.hkapps.messagepro.R
@@ -33,7 +35,11 @@ class ContactsActivity2 : BaseHomeActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityContact2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(0, systemBars.top, 0, 0)
+            insets
+        }
 
         appTopToolbar = findViewById(R.id.appTopToolbar)
         setSupportActionBar(appTopToolbar)

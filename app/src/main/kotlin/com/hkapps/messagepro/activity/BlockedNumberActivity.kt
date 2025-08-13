@@ -11,6 +11,8 @@ import android.telecom.TelecomManager
 import android.view.*
 import android.widget.PopupWindow
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.hkapps.messagepro.R
 import com.hkapps.messagepro.adapter.BlockedNumberAdapter
 import com.hkapps.messagepro.databinding.ActivityBlockedNumberBinding
@@ -38,7 +40,11 @@ class BlockedNumberActivity : BaseActivity(), RefreshingRecyclerListner {
         super.onCreate(savedInstanceState)
         binding = ActivityBlockedNumberBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(0, systemBars.top, 0, 0)
+            insets
+        }
         appTopToolbar = findViewById(R.id.appTopToolbar)
         setSupportActionBar(appTopToolbar)
         getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)

@@ -29,7 +29,6 @@ class SearchMessagesActivity : BaseHomeActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySearchMessageBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setContentView(R.layout.activity_search_message)
         setupSearch()
 
         binding.tvCancel.setOnClickListener {
