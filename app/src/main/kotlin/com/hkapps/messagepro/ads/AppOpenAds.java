@@ -165,7 +165,7 @@ public class AppOpenAds implements LifecycleObserver, Application.ActivityLifecy
                 return;
             }
             Log.e("Ads: ", "Load Open App Manager id: " + adUnitId);
-            AppOpenAd.load(myApplication, adUnitId, new AdRequest.Builder().build(),AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT, loadCallback);
+            AppOpenAd.load(myApplication, adUnitId, new AdRequest.Builder().build(),loadCallback);
         }
     }
 

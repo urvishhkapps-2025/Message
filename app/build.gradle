@@ -7,7 +7,7 @@ apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     namespace "com.hkapps.messagepro"
-    compileSdkVersion 35
+    compileSdkVersion 36
 
     signingConfigs {
         config {
@@ -21,7 +21,7 @@ android {
     defaultConfig {
         applicationId "com.hkapps.messagepro"
         minSdkVersion 23
-        targetSdkVersion 35
+        targetSdkVersion 36
         versionCode 3
         versionName "1.3" // 20-08-2023
         multiDexEnabled true
@@ -68,31 +68,33 @@ android {
 }
 
 dependencies {
-    implementation 'org.greenrobot:eventbus:3.2.0'
+    implementation 'org.greenrobot:eventbus:3.3.1'
     implementation "me.leolin:ShortcutBadger:1.1.22"
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    kapt "androidx.room:room-compiler:2.4.2"
-    implementation "androidx.room:room-runtime:2.4.3"
-    annotationProcessor "androidx.room:room-compiler:2.4.3"
-    implementation "androidx.activity:activity:1.6.1"
-    implementation "androidx.fragment:fragment:1.5.5"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.0"
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.documentfile:documentfile:1.0.1'
+    //noinspection KaptUsageInsteadOfKsp
+    kapt "androidx.room:room-compiler:2.7.2"
+    implementation "androidx.room:room-runtime:2.7.2"
+    annotationProcessor "androidx.room:room-compiler:2.7.2"
+    implementation "androidx.activity:activity-ktx:1.10.1"
+    implementation "androidx.fragment:fragment-ktx:1.8.8"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.1.20"
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation 'androidx.documentfile:documentfile:1.1.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-    implementation "androidx.exifinterface:exifinterface:1.3.3"
-    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation "androidx.exifinterface:exifinterface:1.4.1"
+    implementation 'androidx.appcompat:appcompat:1.7.1'
 
     api 'com.github.tibbi:RecyclerView-FastScroller:e7d3e150c4'
-    api 'androidx.core:core-ktx:1.9.0'
-    api 'com.google.android.material:material:1.6.1'
-    api 'com.google.code.gson:gson:2.9.1'
+    api 'androidx.core:core-ktx:1.16.0'
+    api 'com.google.android.material:material:1.12.0'
+    api 'com.google.code.gson:gson:2.13.1'
 
     api 'com.github.bumptech.glide:glide:4.16.0'
+    //noinspection KaptUsageInsteadOfKsp
     kapt 'com.github.bumptech.glide:compiler:4.16.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
-    implementation 'com.airbnb.android:lottie:5.2.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+    implementation 'com.airbnb.android:lottie:6.6.7'
 //    implementation 'com.reddit:indicator-fast-scroll:1.4.0'
 
 
@@ -103,28 +105,27 @@ dependencies {
 //    implementation 'com.google.ads.mediation:facebook:6.20.0.0'
     implementation 'com.facebook.infer.annotation:infer-annotation:0.18.0'
 
-    implementation 'com.google.android.gms:play-services-ads:21.4.0'
+    implementation 'com.google.android.gms:play-services-ads:24.5.0'
     implementation 'com.tappx.sdk.android:tappx-sdk:4.1.14'
 
     constraints {
-        implementation 'androidx.work:work-runtime:2.7.0-alpha05'
+        implementation 'androidx.work:work-runtime:2.10.3'
     }
     //noinspection PlaySdkIndexDeprecated
-//    implementation 'com.google.android.play:core:1.10.3'
     implementation("com.google.android.play:app-update:2.1.0")
-    implementation 'androidx.work:work-runtime-ktx:2.7.1'
+    implementation 'androidx.work:work-runtime-ktx:2.10.3'
 
     def lifecycle_version = "2.4.0"
     // ViewModel utilities for Compose
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.2"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.9.2"
     // LiveData
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.9.2"
+    implementation "androidx.lifecycle:lifecycle-process:2.9.2"
 
-    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+    implementation platform('com.google.firebase:firebase-bom:34.1.0')
     implementation 'com.google.firebase:firebase-config'
     implementation 'com.google.firebase:firebase-analytics'
-    implementation("com.google.firebase:firebase-crashlytics-ktx")
+    implementation("com.google.firebase:firebase-crashlytics")
 
 }

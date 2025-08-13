@@ -867,7 +867,7 @@ class MainAppClass : Application() {
             } else {
                 return
             }
-            AppOpenAd.load(this, adUnitId, AdRequest.Builder().build(), AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,object : AppOpenAdLoadCallback() {
+            AppOpenAd.load(this, adUnitId, AdRequest.Builder().build(), object : AppOpenAdLoadCallback() {
                 override fun onAdLoaded(ad: AppOpenAd) {
                     appOpenAd = ad
                     appCallBackOpenAppAds.onAdLoad(true)
@@ -886,7 +886,7 @@ class MainAppClass : Application() {
                 return
             }
             Utility.PrintLog("Ads: ", "Load Open App class")
-            AppOpenAd.load(this, adUnitId, AdRequest.Builder().build(), AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT, object : AppOpenAdLoadCallback() {
+            AppOpenAd.load(this, adUnitId, AdRequest.Builder().build(), object : AppOpenAdLoadCallback() {
                 override fun onAdLoaded(ad: AppOpenAd) {
                     appOpenAd = ad
                     appCallBackOpenAppAds.onAdLoad(true)
