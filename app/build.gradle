@@ -13,8 +13,8 @@ android {
         applicationId "com.hkapps.messagepro"
         minSdkVersion 23
         targetSdkVersion 36
-        versionCode 3
-        versionName "1.3" // 20-08-2023
+        versionCode 6
+        versionName "1.6" // 14-08-2025
         multiDexEnabled true
     }
 
