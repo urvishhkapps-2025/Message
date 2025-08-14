@@ -9,15 +9,6 @@ android {
     namespace "com.hkapps.messagepro"
     compileSdkVersion 36
 
-//    signingConfigs {
-//        release  {
-//            storeFile file('messageprokeystore.jks')
-//            storePassword "MessagePro@2023"
-//            keyAlias 'key0'
-//            keyPassword "MessagePro@2023"
-//        }
-//    }
-
     defaultConfig {
         applicationId "com.hkapps.messagepro"
         minSdkVersion 23
