@@ -32,7 +32,7 @@ class SearchMessagesActivity : BaseHomeActivity() {
         setupSearch()
 
         binding.tvCancel.setOnClickListener {
-            onBackPressed()
+            finish()
         }
 
         binding.ivSeachClear.setOnClickListener {
@@ -209,7 +209,6 @@ class SearchMessagesActivity : BaseHomeActivity() {
                 searchResultsAds.clear()
                 for (i in searchResults.indices) {
                     if (AdsHelperClass.getShowNative() == 1) {
-//                        if (i % 5 == 0 && i != 0) {
                         if (i == 0) {
                             searchResultsAds.add(SearchModel(0, "", "", "", 0, "", ""))
                         }
@@ -232,7 +231,6 @@ class SearchMessagesActivity : BaseHomeActivity() {
                 searchResultsAds.clear()
                 for (i in searchResults.indices) {
                     if (AdsHelperClass.getShowNative() == 1) {
-//                        if (i % 5 == 0 && i != 0) {
                         if (i == 0) {
                             searchResultsAds.add(SearchModel(0, "", "", "", 0, "", ""))
                         }

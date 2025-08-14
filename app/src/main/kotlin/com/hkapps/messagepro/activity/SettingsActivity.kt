@@ -1,9 +1,9 @@
 package com.hkapps.messagepro.activity
 
+import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.hkapps.messagepro.MainAppClass.Companion.instance
@@ -76,7 +77,7 @@ class SettingsActivity : BaseHomeActivity() {
 
     private fun setPolicyAndRate() {
         binding.rlPolicy.setOnClickListener {
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://hkappsblog.blogspot.com/2023/05/privacy-policy-for-message-pro-sms.html"))
+            val browserIntent = Intent(Intent.ACTION_VIEW, "https://hkappsblog.blogspot.com/2023/05/privacy-policy-for-message-pro-sms.html".toUri())
             startActivity(browserIntent)
         }
         binding.rlRateUs.setOnClickListener {
@@ -85,7 +86,7 @@ class SettingsActivity : BaseHomeActivity() {
     }
 
     private fun launchMarket() {
-        val uri = Uri.parse("market://details?id=$packageName")
+        val uri = "market://details?id=$packageName".toUri()
         val myAppLinkToMarket = Intent(Intent.ACTION_VIEW, uri)
         try {
             startActivity(myAppLinkToMarket)
@@ -100,10 +101,12 @@ class SettingsActivity : BaseHomeActivity() {
     }
 
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun setupPurchaseThankYou() {
         binding.rlLanguage.background = resources.getDrawable(R.drawable.ripple_top_corners, theme)
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun setupCustomizeNotifications() {
         binding.rlCustomNotifications.beVisibleIf(isOreoPlus())
 

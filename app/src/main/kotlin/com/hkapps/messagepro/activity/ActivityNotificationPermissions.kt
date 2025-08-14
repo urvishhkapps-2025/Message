@@ -34,8 +34,6 @@ class ActivityNotificationPermissions : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
         setContentView(R.layout.activity_notification_permission)
-
-
         onBackPress()
 
         tvSkip = findViewById(R.id.tvSkip)

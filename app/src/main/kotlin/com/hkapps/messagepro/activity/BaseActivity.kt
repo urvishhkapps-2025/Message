@@ -26,10 +26,8 @@ import java.util.*
 import java.util.regex.Pattern
 
 abstract class BaseActivity : AppCompatActivity() {
-    var copyMoveCallback: ((destinationPath: String) -> Unit)? = null
     var actionOnPermission: ((granted: Boolean) -> Unit)? = null
     var isAskingPermissions = false
-    var useDynamicTheme = true
     var checkedDocumentPath = ""
     var configItemsToExport = LinkedHashMap<String, Any>()
 
@@ -313,44 +311,6 @@ abstract class BaseActivity : AppCompatActivity() {
             actionOnPermission?.invoke(grantResults[0] == 0)
         }
     }
-
-//    val copyMoveListener = object : CopyMoveCallback {
-//        override fun copySucceeded(copyOnly: Boolean, copiedAll: Boolean, destinationPath: String, wasCopyingOneFileOnly: Boolean) {
-//            if (copyOnly) {
-//                toast(
-//                    if (copiedAll) {
-//                        if (wasCopyingOneFileOnly) {
-//                            R.string.copying_success_one
-//                        } else {
-//                            R.string.copying_success
-//                        }
-//                    } else {
-//                        R.string.copying_success_partial
-//                    }
-//                )
-//            } else {
-//                toast(
-//                    if (copiedAll) {
-//                        if (wasCopyingOneFileOnly) {
-//                            R.string.moving_success_one
-//                        } else {
-//                            R.string.moving_success
-//                        }
-//                    } else {
-//                        R.string.moving_success_partial
-//                    }
-//                )
-//            }
-//
-//            copyMoveCallback?.invoke(destinationPath)
-//            copyMoveCallback = null
-//        }
-//
-//        override fun copyFailed() {
-//            toast(R.string.copy_move_failed)
-//            copyMoveCallback = null
-//        }
-//    }
 
     private fun exportSettingsTo(outputStream: OutputStream?, configItems: LinkedHashMap<String, Any>) {
         if (outputStream == null) {

@@ -21,14 +21,14 @@ class CopingTextActivity : BaseHomeActivity() {
 
         appTopToolbar = findViewById(R.id.appTopToolbar)
         setSupportActionBar(appTopToolbar)
-        getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
-        getSupportActionBar()!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
         appTopToolbar?.setNavigationIcon(ContextCompat.getDrawable(this, R.drawable.icon_back))
 
         MainAppClass.instance!!.loadBanner(binding.adViewBanner, this)
 
         val msgBody = intent.getStringExtra(THREAD_TITLE)
-        binding.tvSelectMessageBody.setText(msgBody)
+        binding.tvSelectMessageBody.text = msgBody
         binding.tvSelectMessageBody.setLinkTextColor(resources.getColor(R.color.text_link))
 
     }

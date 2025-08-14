@@ -48,9 +48,9 @@ class ContactsActivity : BaseHomeActivity() {
         }
         appTopToolbar = findViewById(R.id.appTopToolbar)
         setSupportActionBar(appTopToolbar)
-        getSupportActionBar()!!.setDisplayHomeAsUpEnabled(false)
-        getSupportActionBar()!!.setDisplayShowHomeEnabled(true)
-        getSupportActionBar()!!.setTitle(resources.getString(R.string.new_conversation))
+        supportActionBar!!.setDisplayHomeAsUpEnabled(false)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.title = resources.getString(R.string.new_conversation)
         appTopToolbar?.setNavigationIcon(ContextCompat.getDrawable(this, R.drawable.icon_back))
 
         handlePermission(PERMISSION_READ_CONTACTS) {

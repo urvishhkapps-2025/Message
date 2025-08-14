@@ -216,10 +216,6 @@ class ContactsActivity2 : BaseHomeActivity() {
         }
     }
 
-    private fun setupLetterFastscroller(contacts: ArrayList<ContactsModel>) {
-
-    }
-
     private fun launchThreadActivity(phoneNumber: String, name: String) {
         val text = intent.getStringExtra(Intent.EXTRA_TEXT) ?: ""
         val numbers = phoneNumber.split(";").toSet()

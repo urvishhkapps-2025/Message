@@ -60,7 +60,7 @@ class AutoCompeletAdapter(val mActivity: BaseHomeActivity, val mContacts: ArrayL
         }
 
         override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-            if (results?.count ?: -1 > 0) {
+            if ((results?.count ?: -1) > 0) {
                 notifyDataSetChanged()
             } else {
                 notifyDataSetInvalidated()

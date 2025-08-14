@@ -154,7 +154,6 @@ class BackupRestoreActivity : BaseHomeActivity() {
                         toast(getString(R.string.exporting_successful))
                         setLastBackupDate()
                     }
-
                     else -> {
 //                        toast(getString(R.string.exporting_failed))
                     }
@@ -169,9 +168,6 @@ class BackupRestoreActivity : BaseHomeActivity() {
         binding.llRestore.isEnabled = enable
         binding.llBackupNow.isEnabled = enable
     }
-
-
-    //import Messages
 
     private fun tryToImportMessages() {
         val arrayList = getAllSavedFontsPath()
@@ -188,7 +184,6 @@ class BackupRestoreActivity : BaseHomeActivity() {
                 )
             dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             dialog.window!!.attributes.windowAnimations = android.R.style.Animation_Dialog
-
             val recyclerView = dialog.findViewById<View>(R.id.recyclerView) as RecyclerView
             recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -208,7 +203,6 @@ class BackupRestoreActivity : BaseHomeActivity() {
 
     private fun getAllSavedFontsPath(): ArrayList<String> {
         val directory: File = ContextWrapper(this).filesDir
-
         val arrayList = ArrayList<String>()
         val sb = StringBuilder()
         sb.append(directory.path)
@@ -288,21 +282,7 @@ class BackupRestoreActivity : BaseHomeActivity() {
         runOnUiThread {
             clickEnable(true)
             binding.llLoadingView.visibility = View.GONE
-
-//            llLoadingView.animate().translationY(-llLoadingView.height.toFloat()).setInterpolator(AccelerateInterpolator()).setDuration(1000)
-//                .setListener(object : Animator.AnimatorListener {
-//                    override fun onAnimationStart(animator: Animator) {}
-//                    override fun onAnimationEnd(animator: Animator) {
-//                        llLoadingView.clearAnimation()
-//                        layoutHide()
-//                    }
-//
-//                    override fun onAnimationCancel(animator: Animator) {}
-//                    override fun onAnimationRepeat(animator: Animator) {}
-//                }).start()
-
         }
-
     }
 
     fun loadDialog(strBackupTitle: String) {
@@ -310,16 +290,6 @@ class BackupRestoreActivity : BaseHomeActivity() {
             clickEnable(false)
             binding.tvBackupTitle.text = strBackupTitle
             binding.llLoadingView.visibility = View.VISIBLE
-//            llLoadingView.animate().translationY(0f).setInterpolator(DecelerateInterpolator()).setDuration(1000)
-//                .setListener(object : Animator.AnimatorListener {
-//                    override fun onAnimationStart(animator: Animator) {
-//
-//                    }
-//
-//                    override fun onAnimationEnd(animator: Animator) {}
-//                    override fun onAnimationCancel(animator: Animator) {}
-//                    override fun onAnimationRepeat(animator: Animator) {}
-//                }).start()
         }
     }
 

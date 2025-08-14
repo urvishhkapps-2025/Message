@@ -15,6 +15,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
 import androidx.fragment.app.Fragment
@@ -57,29 +58,32 @@ class HomeActivity : BaseHomeActivity(), EventListner {
 
     private lateinit var binding: ActivityHomeBinding
 
-    override fun onBackPressed() {
-        if (supportFragmentManager.backStackEntryCount > 1) {
-            supportFragmentManager.popBackStack()
-        } else {
-            if (doubleBackToExitPressedOnce) {
-                finish()
-                return
+    private fun onBackPress() {
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (supportFragmentManager.backStackEntryCount > 1) {
+                    supportFragmentManager.popBackStack()
+                } else {
+                    if (doubleBackToExitPressedOnce) {
+                        finish()
+                        return
+                    }
+                    doubleBackToExitPressedOnce = true
+                    Toast.makeText(this@HomeActivity, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
+                    Handler(Looper.getMainLooper()).postDelayed(
+                        { doubleBackToExitPressedOnce = false },
+                        2000
+                    )
+                }
             }
-            doubleBackToExitPressedOnce = true
-            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
-            Handler(Looper.getMainLooper()).postDelayed(
-                { doubleBackToExitPressedOnce = false },
-                2000
-            )
-        }
+        })
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        onBackPress()
         SharedPrefrenceClass.getInstance()!!.setBoolean("isSplash", false)
         binding.fabContactList.setOnClickListener {
             Intent(this, ContactsActivity::class.java).apply {

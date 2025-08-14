@@ -35,12 +35,10 @@ class SelectTextActivity : BaseHomeActivity() {
         val bitmapLocal = bitmapFromResourceApp(
             resources, R.drawable.icon_banner_textop, 500, 500
         )
-        binding.ivBanner!!.setImageBitmap(bitmapLocal)
-
-
+        binding.ivBanner.setImageBitmap(bitmapLocal)
 
         binding.ivBack.setOnClickListener {
-            onBackPressed()
+            finish()
         }
 
         binding.llCopy.setOnClickListener {

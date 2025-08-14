@@ -22,6 +22,7 @@ import android.view.*
 import android.view.inputmethod.EditorInfo
 import android.widget.*
 import android.widget.LinearLayout.LayoutParams
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.Toolbar
@@ -90,7 +91,7 @@ class MessagesActivity : BaseHomeActivity(), MessagesAdapter.DeleteLuancherListn
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
         appTopToolbar?.navigationIcon = ContextCompat.getDrawable(this, R.drawable.icon_back)
-
+        onBackPress()
         mTitle = intent.getStringExtra(THREAD_TITLE)
         mNUmber = intent.getStringExtra(THREAD_NUMBER)
 
@@ -217,13 +218,17 @@ class MessagesActivity : BaseHomeActivity(), MessagesAdapter.DeleteLuancherListn
         currentActivity.startActivity(intent)
     }
 
-    override fun onBackPressed() {
-        if (isNotification) {
-            startNewMainActivity(this, HomeActivity::class.java)
-            finish()
-        } else {
-            super.onBackPressed()
-        }
+    private fun onBackPress() {
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (isNotification) {
+                    startNewMainActivity(this@MessagesActivity, HomeActivity::class.java)
+                    finish()
+                } else {
+                    finish()
+                }
+            }
+        })
     }
 
     private fun showMoreDialog() {
@@ -385,8 +390,6 @@ class MessagesActivity : BaseHomeActivity(), MessagesAdapter.DeleteLuancherListn
                     val selectedContact = currContacts[position]
                     addSelectedContact(selectedContact)
                 }
-
-
             }
         }
     }

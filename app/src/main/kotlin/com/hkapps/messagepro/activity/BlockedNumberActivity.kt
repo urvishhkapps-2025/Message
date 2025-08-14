@@ -47,9 +47,9 @@ class BlockedNumberActivity : BaseActivity(), RefreshingRecyclerListner {
         }
         appTopToolbar = findViewById(R.id.appTopToolbar)
         setSupportActionBar(appTopToolbar)
-        getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
-        getSupportActionBar()!!.setDisplayShowHomeEnabled(true)
-        getSupportActionBar()!!.setTitle(resources.getString(R.string.block_number))
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.title = resources.getString(R.string.block_number)
         appTopToolbar?.setNavigationIcon(R.drawable.icon_back)
 
         updateBlockedNumbers()
