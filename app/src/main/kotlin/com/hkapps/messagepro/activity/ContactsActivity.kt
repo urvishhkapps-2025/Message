@@ -2,8 +2,10 @@ package com.hkapps.messagepro.activity
 
 import android.content.Intent
 import android.content.res.ColorStateList
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
@@ -24,7 +26,9 @@ import com.hkapps.messagepro.extensions.*
 import com.hkapps.messagepro.model.ContactsModel
 import com.hkapps.messagepro.model.RadioModel
 import com.hkapps.messagepro.utils.*
+import me.zhanghai.android.fastscroll.FastScrollerBuilder
 import java.net.URLDecoder
+import kotlin.math.roundToInt
 
 class ContactsActivity : BaseHomeActivity() {
     private var mAllContacts = ArrayList<ContactsModel>()
@@ -94,27 +98,6 @@ class ContactsActivity : BaseHomeActivity() {
             }
         }
 
-//        fastScrollerViewContact.textColor = getColorStateList()
-//        fastScrollerThumbViewContacts.setupWithFastScroller(fastScrollerViewContact)
-//        fastScrollerThumbViewContacts?.textColor = resources.getColor(android.R.color.white)
-//        fastScrollerThumbViewContacts?.textColor = resources.getColor(android.R.color.white)
-//        fastScrollerThumbViewContacts?.thumbColor = getColorStateList()
-    }
-
-    fun getColorStateList(): ColorStateList {
-        val states = arrayOf(
-            intArrayOf(android.R.attr.state_enabled),
-            intArrayOf(-android.R.attr.state_enabled),
-            intArrayOf(-android.R.attr.state_checked),
-            intArrayOf(android.R.attr.state_pressed)
-        )
-        val colors = intArrayOf(
-            resources.getColor(R.color.only_blue),
-            resources.getColor(R.color.only_blue),
-            resources.getColor(R.color.only_blue),
-            resources.getColor(R.color.only_blue)
-        )
-        return ColorStateList(states, colors)
     }
 
     private fun isThirdPartyIntent(): Boolean {
@@ -183,7 +166,7 @@ class ContactsActivity : BaseHomeActivity() {
             (currAdapter as PhoneContactsAdapter).updateContacts(contacts)
         }
 
-        setupLetterFastscroller(contacts)
+        setupLetterFastscroller()
     }
 
     private fun fillSuggestedContacts(callback: () -> Unit) {
@@ -224,17 +207,28 @@ class ContactsActivity : BaseHomeActivity() {
         }
     }
 
-    private fun setupLetterFastscroller(contacts: ArrayList<ContactsModel>) {
-//        fastScrollerViewContact.setupWithRecyclerView(recyclerViewContacts, { position ->
-//            try {
-//                val name = contacts[position].name
-//                val character = if (name.isNotEmpty()) name.substring(0, 1) else ""
-//                FastScrollItemIndicator.Text(character.toUpperCase(Locale.getDefault()).normalizeString())
-//            } catch (e: Exception) {
-//                FastScrollItemIndicator.Text("")
-//            }
-//        })
+    private fun setupLetterFastscroller() {
+        FastScrollerBuilder(binding.recyclerViewContacts)
+            .setThumbDrawable(ContextCompat.getDrawable(this, R.drawable.fastscroll_thumb)!!)
+            .setTrackDrawable(ContextCompat.getDrawable(this, R.drawable.fastscroll_track)!!)
+            .setPopupStyle { popup ->
+                popup.background = ContextCompat.getDrawable(this, R.drawable.fastscroll_popup_bg)
+                popup.setTextColor(Color.WHITE)
+                popup.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
+                popup.setPadding(dp(12), dp(8), dp(12), dp(8)) // convert dp->px in code
+            }
+            .setPadding(0, dp(8), dp(8), 0)
+            .useMd2Style()
+            .build()
     }
+
+    fun dp(value: Int): Int =
+        TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            value.toFloat(),
+            resources.displayMetrics
+        ).roundToInt()
+
 
     private fun launchThreadActivity(phoneNumber: String, name: String) {
         val text = intent.getStringExtra(Intent.EXTRA_TEXT) ?: ""

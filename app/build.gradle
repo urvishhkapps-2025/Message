@@ -9,14 +9,14 @@ android {
     namespace "com.hkapps.messagepro"
     compileSdkVersion 36
 
-    signingConfigs {
-        config {
-            storeFile file('messageprokeystore.jks')
-            storePassword "MessagePro@2023"
-            keyAlias 'key0'
-            keyPassword "MessagePro@2023"
-        }
-    }
+//    signingConfigs {
+//        release  {
+//            storeFile file('messageprokeystore.jks')
+//            storePassword "MessagePro@2023"
+//            keyAlias 'key0'
+//            keyPassword "MessagePro@2023"
+//        }
+//    }
 
     defaultConfig {
         applicationId "com.hkapps.messagepro"
@@ -48,6 +48,12 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig = signingConfigs.create("config") {
+                storeFile = file("D:\\App\\Message\\messageprokeystore.jks")
+                storePassword = "MessagePro@2023"
+                keyAlias = "key0"
+                keyPassword = "MessagePro@2023"
+            }
         }
     }
     useLibrary 'org.apache.http.legacy'
@@ -97,7 +103,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
     implementation 'com.airbnb.android:lottie:6.6.7'
 //    implementation 'com.reddit:indicator-fast-scroll:1.4.0'
-
+    implementation "me.zhanghai.android.fastscroll:library:1.3.0"
 
     implementation 'com.google.ads.mediation:facebook:6.20.0.0'
     implementation 'com.google.android.gms:play-services-ads:24.5.0'
